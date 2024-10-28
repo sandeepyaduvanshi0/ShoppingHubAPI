@@ -37,8 +37,8 @@ namespace ShoppingHub.DataAccess.Migrations
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
-                    b.Property<byte[]>("LogoImage")
-                        .HasColumnType("varbinary(max)");
+                    b.Property<string>("LogoImage")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -50,7 +50,7 @@ namespace ShoppingHub.DataAccess.Migrations
 
                     b.HasKey("BrandId");
 
-                    b.ToTable("Brand");
+                    b.ToTable("Brands");
                 });
 
             modelBuilder.Entity("ShoppingHub.Models.Category", b =>

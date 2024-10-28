@@ -10,7 +10,6 @@ using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 
 namespace ShoppingHub.Models
 {
-    [Table("Brand")]
     public class Brand
     {
         [Key]
@@ -19,7 +18,7 @@ namespace ShoppingHub.Models
         public required string Name { get; set; }  // Brand name
         [StringLength(500)]
         public string? Description { get; set; }
-        public byte[]? LogoImage { get; set; }
+        public string? LogoImage { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public DateTime? UpdatedAt { get; set; }
         [NotMapped]

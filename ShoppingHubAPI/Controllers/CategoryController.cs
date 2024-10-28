@@ -30,7 +30,7 @@ namespace ShoppingHubAPI.Controllers
             return Ok(category);
         }
         [HttpPost]
-        [Route("create")]
+        //[Route("create")]
         public IActionResult InsertCategory([FromBody] Category category)
         {
             if (category == null)
@@ -52,7 +52,7 @@ namespace ShoppingHubAPI.Controllers
         }
 
         [HttpDelete]
-        [Route("delete/{id:int}")]
+        [Route("{id:int}")]
         public IActionResult DeleteCategory(int id)
         {
             var category = _unitOfWork.Category.Get(c => c.Id == id);
